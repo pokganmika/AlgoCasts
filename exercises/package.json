@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "jest reversestring/test.js --watch"
   },
   "jest": {
     "testEnvironment": "node"
@@ -13,5 +14,9 @@
   "license": "ISC",
   "dependencies": {
     "jest": "^24.8.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "babel-cli": "^6.26.0"
   }
 }
