@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 // --- Directions
 // Given an integer, return an integer that is the reverse
 // ordering of numbers.
@@ -8,6 +9,18 @@
 //   reverseInt(-15) === -51
 //   reverseInt(-90) === -9
 
-function reverseInt(n) {}
+function reverseInt(n) {
+  // my solution
+  // if (n > 0) return +String(n).split('').reverse().join('');
+  // else if (n === 0) return 0;
+  // else return -String(n).split('').reverse().slice(0, String(n).length - 1).join('');
+
+  // ----- -----
+
+  // solution
+  const reversed = n.toString().split('').reverse().join('');
+  // if (n < 0) return parseInt(reversed) * -1;
+  return parseInt(reversed) * Math.sign(n);
+}
 
 module.exports = reverseInt;
