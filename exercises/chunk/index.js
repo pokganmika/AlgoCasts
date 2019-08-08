@@ -1,3 +1,4 @@
+/* jshint esversion: 6 */
 // --- Directions
 // Given an array and chunk size, divide the array into many subarrays
 // where each subarray is of length size
@@ -8,6 +9,44 @@
 // chunk([1, 2, 3, 4, 5], 4) --> [[ 1, 2, 3, 4], [5]]
 // chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
 
-function chunk(array, size) {}
+function chunk(array, size) {
+  // my solution
+  // const result = [];
+  // let temp = [];
+  // for (let i = 0; i < array.length; i++) { 
+  //   if (temp.length === size) {
+  //     result.push(temp);
+  //     temp = [array[i]];
+  //   } else { 
+  //     temp.push(array[i]);
+  //   }
+  // }
+  // result.push(temp);
+  // return result;
+
+  // ----- -----
+  // #1 solution
+  // const chunked = [];
+  // for (let element of array) { 
+  //   const last = chunked[chunked.length - 1];
+  //   if (!last || last.length === size) {
+  //     chunked.push([element]);
+  //   } else { 
+  //     last.push(element);
+  //   }
+  // }
+  // return chunked;
+
+  // #2 solution
+  const chunked = [];
+  let index = 0;
+
+  while (index < array.length) { 
+    chunked.push(array.slice(index, index + size));
+    index += size;
+  }
+
+  return chunked;
+}
 
 module.exports = chunk;
