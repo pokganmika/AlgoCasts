@@ -7,6 +7,29 @@
 //   vowels('Why do you ask?') --> 4
 //   vowels('Why?') --> 0
 
-function vowels(str) {}
+function vowels(str) {
+  const char = /a|i|o|u|e|A|I|O|U|E/;
+  let result = 0;
+  for( let i = 0; i < str.length; i++ ) {
+    if ( char.test(str[i]) ) result += 1;
+  }
+  return result;
+}
+
+// SOLUTION 1.
+// function vowels(str) {
+//   let count = 0;
+//   const checker = [ 'a', 'e', 'i', 'o', 'u' ];
+//   for ( let char of str.toLowerCase() ) {
+//     if ( checker.includes( char ) ) count++;
+//   }
+//   return count;
+// }
+
+// SOLUTION 2.
+// function vowels(str) {
+//   const matches = str.match(/[aeiou]/gi);
+//   return matches ? matches.length : 0;
+// }
 
 module.exports = vowels;
